@@ -297,6 +297,39 @@ hr {
     background-color: #FFF;
   }
 }
+/* Section decoration */
+section::before,
+section::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+section {
+  position: relative;
+}
+
+/* Triangles */
+.mast::before,
+.mast::after {
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+.mast-photos::before,
+.mast-head::before {
+  bottom: -50px;
+  background: @brand-yellow;
+}
+
+.mast-collab::after {
+  bottom: -50px;
+  z-index: 10;
+  background: @gray;
+}
+
 /* Screenshot */
 @media (max-width: @screen-sm-max) {
   .web-app {
@@ -433,4 +466,11 @@ hr {
   .media-text {
     color: lighten(@gray, 25%);
   }
+}
+/* Carousel */
+.carousel-caption {
+  bottom: 60px;
+}
+.carousel-indicators {
+  bottom: 0;
 }

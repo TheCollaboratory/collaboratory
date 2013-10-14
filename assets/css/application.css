@@ -4086,7 +4086,7 @@ button.close {
   opacity: 0.5;
   filter: alpha(opacity=50);
   font-size: 20px;
-  color: #ffffff;
+  color: #404041;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
@@ -4110,7 +4110,7 @@ button.close {
 }
 .carousel-control:hover,
 .carousel-control:focus {
-  color: #ffffff;
+  color: #404041;
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);
@@ -4163,7 +4163,7 @@ button.close {
   height: 10px;
   margin: 1px;
   text-indent: -999px;
-  border: 1px solid #ffffff;
+  border: 1px solid #404041;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -4171,7 +4171,7 @@ button.close {
   margin: 0;
   width: 12px;
   height: 12px;
-  background-color: #ffffff;
+  background-color: #404041;
 }
 .carousel-caption {
   position: absolute;
@@ -4955,6 +4955,36 @@ hr {
 .mast.mast-white {
   background-color: #FFF;
 }
+/* Section decoration */
+section::before,
+section::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+section {
+  position: relative;
+}
+/* Triangles */
+.mast::before,
+.mast::after {
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+.mast-photos::before,
+.mast-head::before {
+  bottom: -50px;
+  background: #e8ce4d;
+}
+.mast-collab::after {
+  bottom: -50px;
+  z-index: 10;
+  background: #404041;
+}
 /* Screenshot */
 @media (max-width: 991px) {
   .web-app {
@@ -5086,6 +5116,13 @@ hr {
 }
 .list-group-striped .media-text {
   color: #7f7f81;
+}
+/* Carousel */
+.carousel-caption {
+  bottom: 60px;
+}
+.carousel-indicators {
+  bottom: 0;
 }
 .text-xs,
 .text-sm,
