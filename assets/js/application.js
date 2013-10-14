@@ -1,7 +1,7 @@
 
 $(function(){
 	// sidebar Toggle
-	$(".sidebar-toggle").click(function(){
+	$(".sidebar-toggle,.sidebar a[href=#contact]").click(function(){
 		$(".sidebar").toggleClass("active");
 		$(".content").toggleClass("content-sidebar");
 		$("body").toggleClass("body-sidebar");
@@ -22,6 +22,8 @@ $(function(){
 	$('.aside').bind('clickoutside', function (event) {
 		$(".aside").removeClass("active");
 	});
+	// Activate tooltip
+    $("[data-toggle='tooltip']").tooltip();
 });
 $(document).ready(function() {
      $('.collabo img').addClass('animate');

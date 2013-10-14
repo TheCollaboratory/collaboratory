@@ -3,6 +3,8 @@
 // --------------------------------------------------
 body {
 	padding: 0;
+	-webkit-overflow-scrolling: touch;
+
 	&.body-sidebar,
 	&.body-aside {
 		overflow: hidden;
@@ -48,6 +50,16 @@ img {
 }
 .header.skrollable-after {
 	position: fixed;
+}
+@media (max-width: @screen-xs-max) {
+	.header {
+		position: fixed;
+		padding: 10px 0;
+
+		.container {
+			padding: 0;
+		}
+	}
 }
 /* Container */
 .movement {
@@ -178,6 +190,7 @@ img {
 	z-index: 3;
 	overflow-x: hidden;
 	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 
 	.nav-heading {
 	  text-transform: uppercase;
@@ -336,17 +349,17 @@ img {
 	}
 	.aside,
 	.sidebar {
-		width: 65%;
+		width: 80%;
 	}
 	.header-sidebar,
 	.content-sidebar {
-		-webkit-transform: translate3d(65%,0,0);
-		transform: translate3d(65%,0,0);
+		-webkit-transform: translate3d(80%,0,0);
+		transform: translate3d(80%,0,0);
 	}
 	.header-aside,
 	.content-aside {
-		-webkit-transform: translate3d(-65%,0,0);
-		transform: translate3d(-65%,0,0);
+		-webkit-transform: translate3d(-80%,0,0);
+		transform: translate3d(-80%,0,0);
 	}
 	.panel-heading {
 		padding: 4px;

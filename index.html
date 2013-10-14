@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>The Collaboratory of ATX</title>
@@ -24,12 +26,13 @@
 	<header class="header" data-anchor-target=".mast-head" data-top-bottom="opacity:1" data-top-bottom="opacity:1">
 		<div class="container text-center">
 			<a class="sidebar-toggle pull-left btn btn-lg btn-none visible-xs"><span aria-hidden="true" class="icon-menu"></span></a>
-			<ul class="list-inline hidden-xs">
-				<li><a href="#collaboratory">About</a></li>
-				<li><a href="#collaborators">Collaborators</a></li>
-				<li><a href="#photos">Photos</a></li>
-				<li><a href="#labs">Labs</a></li>
-				<li><a href="#contact">Contact</a></li>
+			<ul class="list-inline hidden-xs list-nav">
+				<li class="list-item-top"><a href="#"><span aria-hidden="true" class="icon-arrow-up"></span></a></li>
+				<li><a href="#collaboratory" data-toggle="tooltip" title="What's all this?">About</a></li>
+				<li><a href="#collaborators" data-toggle="tooltip" title="All the kids">Collaborators</a></li>
+				<li><a href="#photos" data-toggle="tooltip" title="Ohhh I wanna see!">Photos</a></li>
+				<li><a href="#labs" data-toggle="tooltip" title="What's bubbling up?">Labs</a></li>
+				<li><a href="#contact" data-toggle="tooltip" title="Who can I talk to?">Contact</a></li>
 			</ul>
 		</div>
 	</header>

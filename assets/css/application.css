@@ -4966,25 +4966,27 @@ section {
   position: relative;
 }
 /* Triangles */
-.mast::before,
-.mast::after {
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  -webkit-transform: translateX(-50%) rotate(45deg);
-  transform: translateX(-50%) rotate(45deg);
-  z-index: 1;
-}
-.mast-photos::before,
-.mast-head::before {
-  bottom: -50px;
-  background: #e8ce4d;
-}
-.mast-labs::after,
-.mast-collab::after {
-  bottom: -50px;
-  z-index: 10;
-  background: #404041;
+@media (min-width: 1200px) {
+  .mast::before,
+  .mast::after {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 1;
+  }
+  .mast-photos::before,
+  .mast-head::before {
+    bottom: -50px;
+    background: #e8ce4d;
+  }
+  .mast-labs::after,
+  .mast-collab::after {
+    bottom: -50px;
+    z-index: 10;
+    background: #404041;
+  }
 }
 /* Screenshot */
 @media (max-width: 991px) {
@@ -5095,7 +5097,8 @@ section {
   background-color: #f9f9f9;
 }
 /* Collaborator Names */
-.row-collaborators h5 {
+.row-collaborators h5,
+.row-collaborators p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5124,6 +5127,61 @@ section {
 }
 .carousel-indicators {
   bottom: 0;
+}
+/* Menu */
+.list-nav {
+  margin-bottom: 0;
+}
+.skrollable-after .list-nav .tooltip {
+  display: none !important;
+}
+.skrollable-before .list-nav a {
+  padding: 10px 0;
+  position: relative;
+}
+.skrollable-before .list-nav a::before {
+  color: #fff;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  content: attr(data-hover);
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+.skrollable-before .list-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  transform: translateY(5px);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+.skrollable-before .list-nav a:hover::before,
+.skrollable-before .list-nav a:focus::before {
+  opacity: 0;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.skrollable-before .list-nav a:hover::after,
+.skrollable-before .list-nav a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.skrollable-before .list-item-top {
+  display: none;
 }
 .text-xs,
 .text-sm,
@@ -5196,21 +5254,21 @@ h3,
   .icon-super {
     font-size: 50px;
   }
-  h1,
-  .h1 {
+  .content h1,
+  .content .h1 {
     font-size: 1.2em;
   }
-  h2,
-  .h2 {
+  .content h2,
+  .content .h2 {
     font-size: 1em;
   }
-  h3,
-  .h3,
-  h4,
-  .h4 {
-    font-size: 0.8em;
+  .content h3,
+  .content .h3,
+  .content h4,
+  .content .h4 {
+    font-size: 1em;
   }
-  p {
+  .content p {
     font-size: 1em;
   }
 }
@@ -5679,6 +5737,7 @@ you can use the generic selector below, but it's slower:
 }
 body {
   padding: 0;
+  -webkit-overflow-scrolling: touch;
 }
 body.body-sidebar,
 body.body-aside {
@@ -5722,6 +5781,15 @@ img {
 }
 .header.skrollable-after {
   position: fixed;
+}
+@media (max-width: 767px) {
+  .header {
+    position: fixed;
+    padding: 10px 0;
+  }
+  .header .container {
+    padding: 0;
+  }
 }
 /* Container */
 .movement {
@@ -5833,6 +5901,7 @@ img {
   z-index: 3;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   /* Slide */
 
 }
@@ -5985,17 +6054,17 @@ img {
   }
   .aside,
   .sidebar {
-    width: 65%;
+    width: 80%;
   }
   .header-sidebar,
   .content-sidebar {
-    -webkit-transform: translate3d(65%, 0, 0);
-    transform: translate3d(65%, 0, 0);
+    -webkit-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0);
   }
   .header-aside,
   .content-aside {
-    -webkit-transform: translate3d(-65%, 0, 0);
-    transform: translate3d(-65%, 0, 0);
+    -webkit-transform: translate3d(-80%, 0, 0);
+    transform: translate3d(-80%, 0, 0);
   }
   .panel-heading {
     padding: 4px;
