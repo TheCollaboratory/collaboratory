@@ -4980,6 +4980,7 @@ section {
   bottom: -50px;
   background: #e8ce4d;
 }
+.mast-labs::after,
 .mast-collab::after {
   bottom: -50px;
   z-index: 10;
