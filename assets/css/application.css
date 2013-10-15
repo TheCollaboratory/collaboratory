@@ -5797,7 +5797,7 @@ img {
     padding: 70px 0;
   }
   .mast-head .container {
-    padding: 130px 0 130px 0;
+    padding: 130px 0 100px 0;
   }
 }
 @media (min-width: 1200px) {
@@ -5805,7 +5805,7 @@ img {
     padding: 130px 0;
   }
   .mast-head .container {
-    padding: 200px 0 200px 0;
+    padding: 200px 0 150px 0;
   }
 }
 .mast {
