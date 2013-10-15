@@ -4678,7 +4678,8 @@ hr {
 .bg {
   background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
+  background-attachment: fixed;
 }
 .bg-1 {
   background-image: url('../images/backgrounds/bg-1.jpg');
@@ -4688,14 +4689,6 @@ hr {
 }
 .bg-3 {
   background-image: url('../images/backgrounds/bg-3.jpg');
-}
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
 }
 @media (max-width: 767px) {
   video.bg {
@@ -4847,11 +4840,12 @@ hr {
 /* Header */
 .header .list-inline {
   font-size: 16px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   margin-right: 15px;
   line-height: 40px;
   font-weight: 100;
+  padding: 5px;
+  letter-spacing: 2px;
 }
 .header .list-inline li {
   margin-left: 10px;
@@ -4866,45 +4860,36 @@ hr {
 .header a:active {
   text-decoration: none;
 }
-.header.skrollable-before,
-.header.skrollable-between {
+.header.affix-top {
   background-color: transparent;
-  padding: 40px 20px;
 }
-.header.skrollable-before .logo,
-.header.skrollable-between .logo {
+.header.affix-top .logo {
   background-image: url('../images/logo-white.png');
 }
-.header.skrollable-before a,
-.header.skrollable-between a {
+.header.affix-top a {
   color: #f7eddf;
 }
-.header.skrollable-before .list-inline a,
-.header.skrollable-between .list-inline a {
+.header.affix-top .list-inline a {
   color: #FFF;
 }
-.header.skrollable-before .list-inline a:hover,
-.header.skrollable-between .list-inline a:hover {
+.header.affix-top .list-inline a:hover {
   color: #f7eddf;
 }
-.header.skrollable-before .btn-trans,
-.header.skrollable-between .btn-trans {
+.header.affix-top .btn-trans {
   background: transparent;
 }
-.header.skrollable-before .btn-trans:hover,
-.header.skrollable-between .btn-trans:hover {
+.header.affix-top .btn-trans:hover {
   color: #ffffff;
 }
-.header.skrollable-after {
+.header.affix {
   background: #e8ce4d;
-  padding: 5px;
   -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
 }
-.header.skrollable-after .logo {
+.header.affix .logo {
   background-image: url('../images/logo.png');
 }
-.header.skrollable-after .list-inline a {
+.header.affix .list-inline a {
   color: #404041;
   text-shadow: none;
 }
@@ -4976,8 +4961,7 @@ section {
     transform: translateX(-50%) rotate(45deg);
     z-index: 1;
   }
-  .mast-photos::before,
-  .mast-head::before {
+  .mast-photos::before {
     bottom: -50px;
     background: #e8ce4d;
   }
@@ -5107,12 +5091,12 @@ section {
 .row-collaborators img {
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
-  -webkit-filter: sepia(100%);
-  -filter: sepia(100%);
+  -webkit-filter: grayscale(100%);
+  -filter: grayscale(100%);
 }
 .row-collaborators img:hover {
-  -webkit-filter: sepia(0%);
-  -filter: sepia(0%);
+  -webkit-filter: grayscale(0%);
+  -filter: grayscale(0%);
 }
 /* List Group */
 .list-group-striped > .list-group-item:nth-child(odd) {
@@ -5132,14 +5116,14 @@ section {
 .list-nav {
   margin-bottom: 0;
 }
-.skrollable-after .list-nav .tooltip {
+.affix .list-nav .tooltip {
   display: none !important;
 }
-.skrollable-before .list-nav a {
+.affix-top .list-nav a {
   padding: 10px 0;
   position: relative;
 }
-.skrollable-before .list-nav a::before {
+.affix-top .list-nav a::before {
   color: #fff;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   content: attr(data-hover);
@@ -5149,7 +5133,7 @@ section {
   transition: transform 0.3s, opacity 0.3s;
   pointer-events: none;
 }
-.skrollable-before .list-nav a::after {
+.affix-top .list-nav a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -5166,21 +5150,21 @@ section {
   transition: transform 0.3s, opacity 0.3s;
   pointer-events: none;
 }
-.skrollable-before .list-nav a:hover::before,
-.skrollable-before .list-nav a:focus::before {
+.affix-top .list-nav a:hover::before,
+.affix-top .list-nav a:focus::before {
   opacity: 0;
   -webkit-transform: translateY(-2px);
   -moz-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-.skrollable-before .list-nav a:hover::after,
-.skrollable-before .list-nav a:focus::after {
+.affix-top .list-nav a:hover::after,
+.affix-top .list-nav a:focus::after {
   opacity: 1;
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
   transform: translateY(0px);
 }
-.skrollable-before .list-item-top {
+.affix-top .list-item-top {
   display: none;
 }
 .text-xs,
@@ -5737,7 +5721,6 @@ you can use the generic selector below, but it's slower:
 }
 body {
   padding: 0;
-  -webkit-overflow-scrolling: touch;
 }
 body.body-sidebar,
 body.body-aside {
@@ -5754,8 +5737,6 @@ img {
   z-index: 3;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 .header .dropdown-title {
   margin-left: 10px;
@@ -5775,12 +5756,11 @@ img {
 .header .dropdown-menu.pull-right {
   text-align: left;
 }
-.header.skrollable-before,
-.header.skrollable-between {
-  position: absolute;
-}
-.header.skrollable-after {
-  position: fixed;
+@media (min-width: 768px) {
+  .header.affix-top {
+    margin-bottom: 20px;
+    margin-top: -20px;
+  }
 }
 @media (max-width: 767px) {
   .header {
@@ -5838,8 +5818,6 @@ img {
 .content {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 /* Sidebar Toggle */
 .fixed-sidebar-toggle {

@@ -3,7 +3,6 @@
 // --------------------------------------------------
 body {
 	padding: 0;
-	-webkit-overflow-scrolling: touch;
 
 	&.body-sidebar,
 	&.body-aside {
@@ -21,8 +20,7 @@ img {
 	right: 0;
 	z-index: 3;
 	.transition (all .2s linear);
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+
 
 	.dropdown-title {
 		margin-left: 10px;
@@ -44,12 +42,11 @@ img {
 		text-align: left;
 	}
 }
-.header.skrollable-before,
-.header.skrollable-between {
-	position: absolute;
-}
-.header.skrollable-after {
-	position: fixed;
+@media (min-width: @screen-sm-min) {
+	.header.affix-top {
+		margin-bottom: 20px;
+		margin-top: -20px;
+	}
 }
 @media (max-width: @screen-xs-max) {
 	.header {
@@ -125,8 +122,7 @@ img {
 /* Content */
 .content {
 	.transition (all .2s linear);
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+
 }
 /* Sidebar Toggle */
 .fixed-sidebar-toggle {

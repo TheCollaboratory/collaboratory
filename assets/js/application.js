@@ -1,5 +1,29 @@
 
 $(function(){
+
+
+    // back to top
+    setTimeout(function () {
+      var $topNav = $('.header')
+
+      $topNav.affix({
+        offset: {
+          top: function () {
+            var offsetTop      = $topNav.offset().top
+            var sideBarMargin  = parseInt($topNav.children(0).css('margin-top'), 10)
+            var navOuterHeight = $('.list-nav').height()
+
+            return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+          }
+        }
+      })
+    }, 100)
+
+    setTimeout(function () {
+      $('.header').affix()
+    }, 100)
+
+
 	// sidebar Toggle
 	$(".sidebar-toggle,.sidebar a[href=#contact]").click(function(){
 		$(".sidebar").toggleClass("active");
