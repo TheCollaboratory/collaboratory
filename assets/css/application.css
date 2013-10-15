@@ -4968,7 +4968,7 @@ section {
   .mast-labs::after,
   .mast-collab::after {
     bottom: -50px;
-    z-index: 10;
+    z-index: 4;
     background: #404041;
   }
 }
@@ -5734,7 +5734,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 11;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }

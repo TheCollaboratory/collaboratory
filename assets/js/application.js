@@ -23,9 +23,14 @@ $(function(){
       $('.header').affix()
     }, 100)
 
+    // smooth scroll
+    $("a[href^='#']").on('click', function(e) {
+	   // e.preventDefault();
+	   $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 300);
+	});
 
 	// sidebar Toggle
-	$(".sidebar-toggle,.sidebar a[href=#contact]").click(function(){
+	$(".sidebar-toggle,.sidebar .contact-toggle").click(function(){
 		$(".sidebar").toggleClass("active");
 		$(".content").toggleClass("content-sidebar");
 		$("body").toggleClass("body-sidebar");
@@ -36,7 +41,7 @@ $(function(){
 		$(".sidebar").removeClass("active");
 	});
 	// aside Toggle
-	$(".aside-toggle,a[href=#contact]").click(function(){
+	$(".aside-toggle,.contact-toggle").click(function(){
 		$(".aside").toggleClass("active");
 		$(".content").toggleClass("content-aside");
 		$("body").toggleClass("body-aside");
