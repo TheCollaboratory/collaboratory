@@ -5833,8 +5833,10 @@ img {
   bottom: 0;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  -moz-transition: all .2s linear;
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
   z-index: 3;
   overflow-x: hidden;
   overflow-y: auto;
@@ -5857,6 +5859,7 @@ img {
 .sidebar.active {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   z-index: 3;
 }
 /* Aside Toggle */
@@ -5874,8 +5877,10 @@ img {
   padding: 20px;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  -moz-transition: all .2s linear;
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
   z-index: 3;
   overflow-x: hidden;
   overflow-y: auto;
@@ -5900,6 +5905,7 @@ img {
 .aside.active {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   z-index: 3;
 }
 .aside .aside-form {
@@ -5969,8 +5975,6 @@ img {
   height: auto;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 1.3s linear;
-  transition: opacity 1.3s linear;
 }
 .collabo img.animate {
   opacity: 1;
@@ -5980,43 +5984,73 @@ img {
   top: 53px;
   left: 143px;
   width: 25px;
-  transition-delay: 1s;
-  -webkit-transition-delay: 1s;
+  transition: opacity 1.3s linear 1s, transform 0.3s linear 0.1s;
+  -webkit-transition: opacity 1.3s linear 1s, -webkit-transform 0.3s linear 0.1s;
 }
 .collabo .cog2 {
   top: 27px;
   left: 155px;
   width: 27px;
-  transition-delay: 1.3s;
-  -webkit-transition-delay: 1.3s;
+  transition: opacity 1.3s linear 1.3s, transform 0.3s linear 0.3s;
+  -webkit-transition: opacity 1.3s linear 1.3s, -webkit-transform 0.3s linear 0.3s;
 }
 .collabo .cog3 {
   top: 7px;
   left: 130px;
   width: 31px;
-  transition-delay: 1.6s;
-  -webkit-transition-delay: 1.6s;
+  transition: opacity 1.3s linear 1.6s, transform 0.3s linear 0.5s;
+  -webkit-transition: opacity 1.3s linear 1.6s, -webkit-transform 0.3s linear 0.5s;
 }
 .collabo .lefthand {
   left: 44px;
   top: 64px;
   width: 117px;
-  transition-delay: 0.8s;
-  -webkit-transition-delay: 0.8s;
+  transition: opacity 1.3s linear 0.8s, transform 0.3s linear;
+  -webkit-transition: opacity 1.3s linear 0.8s, -webkit-transform 0.3s linear;
 }
 .collabo .righthand {
   right: 44px;
   top: 64px;
   width: 117px;
-  transition-delay: 0.8s;
-  -webkit-transition-delay: 0.8s;
+  transition: opacity 1.3s linear 0.8s, transform 0.3s linear;
+  -webkit-transition: opacity 1.3s linear 0.8s, -webkit-transform 0.3s linear;
 }
 .collabo .shield {
   bottom: 0;
   left: 0;
   width: 310px;
-  transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
+  transition: opacity 1.3s linear 0.8s, filter 0.3s linear;
+  -webkit-transition: opacity 1.3s linear 0.8s, -webkit-filter 0.3s linear;
+}
+.collabo.affix .cog1 {
+  transform: translate(0, -400px);
+  -ms-transform: translate(0, -400px);
+  -webkit-transform: translate(0, -400px);
+}
+.collabo.affix .cog2 {
+  transform: translate(0, -400px);
+  -ms-transform: translate(0, -400px);
+  -webkit-transform: translate(0, -400px);
+}
+.collabo.affix .cog3 {
+  transform: translate(0, -400px);
+  -ms-transform: translate(0, -400px);
+  -webkit-transform: translate(0, -400px);
+}
+.collabo.affix .lefthand {
+  transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+}
+.collabo.affix .righthand {
+  transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+}
+.collabo.affix .shield {
+  filter: invert(10%);
+  -webkit-filter: invert(10%);
+  -ms-filter: invert(10%);
 }
 @media (max-width: 992px) {
   body {
@@ -6038,11 +6072,13 @@ img {
   .content-sidebar {
     -webkit-transform: translate3d(80%, 0, 0);
     transform: translate3d(80%, 0, 0);
+    -moz-transform: translate3d(80%, 0, 0);
   }
   .header-aside,
   .content-aside {
     -webkit-transform: translate3d(-80%, 0, 0);
     transform: translate3d(-80%, 0, 0);
+    -moz-transform: translate3d(-80%, 0, 0);
   }
   .panel-heading {
     padding: 4px;
@@ -6057,10 +6093,12 @@ img {
   .content-sidebar {
     -webkit-transform: translate3d(40%, 0, 0);
     transform: translate3d(40%, 0, 0);
+    -moz-transform: translate3d(40%, 0, 0);
   }
   .header-aside,
   .content-aside {
     -webkit-transform: translate3d(-40%, 0, 0);
     transform: translate3d(-40%, 0, 0);
+    -moz-transform: translate3d(-40%, 0, 0);
   }
 }

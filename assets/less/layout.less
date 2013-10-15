@@ -137,8 +137,10 @@ img {
 	left: 0;
 	bottom: 0;
 	.transition (all .2s linear);
+	-moz-transition: all .2s linear;
 	-webkit-transform: translate3d(-100%,0,0);
 	transform: translate3d(-100%,0,0);
+	-moz-transform: translate3d(-100%,0,0);
 	z-index: 3;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -163,6 +165,7 @@ img {
 	&.active {
 		-webkit-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
 		z-index: 3;
 
 	}
@@ -181,8 +184,10 @@ img {
 	bottom: 0;
 	padding: 20px;
 	.transition (all .2s linear);
+	-moz-transition: all .2s linear;
 	-webkit-transform: translate3d(100%,0,0);
 	transform: translate3d(100%,0,0);
+	-moz-transform: translate3d(100%,0,0);
 	z-index: 3;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -209,6 +214,7 @@ img {
 	&.active {
 		-webkit-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
 		z-index: 3;
 
 	}
@@ -282,7 +288,7 @@ img {
 		position: absolute;
 		height: auto;
 		.opacity (0);
-		.transition (opacity 1.3s linear);
+		
 		&.animate {
 			.opacity (1);
 		}
@@ -291,43 +297,75 @@ img {
 		top: 53px;
 		left: 143px;
 		width: 25px;
-		transition-delay: 1s;
-		-webkit-transition-delay: 1s;
+		transition: opacity 1.3s linear 1s, transform 0.3s linear 0.1s;
+		-webkit-transition: opacity 1.3s linear 1s, -webkit-transform 0.3s linear 0.1s;
 	}
 	.cog2 {
 		top: 27px;
 		left: 155px;
 		width: 27px;
-		transition-delay: 1.3s;
-		-webkit-transition-delay: 1.3s;
+		transition: opacity 1.3s linear 1.3s, transform 0.3s linear 0.3s;
+		-webkit-transition: opacity 1.3s linear 1.3s, -webkit-transform 0.3s linear 0.3s;
 	}
 	.cog3 {
 		top: 7px;
 		left: 130px;
 		width: 31px;
-		transition-delay: 1.6s;
-		-webkit-transition-delay: 1.6s;
+		transition: opacity 1.3s linear 1.6s, transform 0.3s linear 0.5s;
+		-webkit-transition: opacity 1.3s linear 1.6s, -webkit-transform 0.3s linear 0.5s;
 	}
 	.lefthand {
 		left: 44px;
 		top: 64px;
 		width: 117px;
-		transition-delay: 0.8s;
-		-webkit-transition-delay: 0.8s;
+		transition: opacity 1.3s linear 0.8s, transform 0.3s linear;
+		-webkit-transition: opacity 1.3s linear 0.8s, -webkit-transform 0.3s linear;
 	}
 	.righthand {
 		right: 44px;
 		top: 64px;
 		width: 117px;
-		transition-delay: 0.8s;
-		-webkit-transition-delay: 0.8s;
+		transition: opacity 1.3s linear 0.8s, transform 0.3s linear;
+		-webkit-transition: opacity 1.3s linear 0.8s, -webkit-transform 0.3s linear;
 	}
 	.shield {
 		bottom: 0;
 		left: 0;
 		width: 310px;
-		transition-delay: 0.5s;
-		-webkit-transition-delay: 0.5s;
+		transition: opacity 1.3s linear 0.8s, filter 0.3s linear;
+		-webkit-transition: opacity 1.3s linear 0.8s, -webkit-filter 0.3s linear;
+	}
+	&.affix {
+		.cog1 {
+			transform: translate(0,-400px);
+			-ms-transform: translate(0,-400px);
+			-webkit-transform: translate(0,-400px);
+		}
+		.cog2 {
+			transform: translate(0,-400px);
+			-ms-transform: translate(0,-400px);
+			-webkit-transform: translate(0,-400px);
+		}
+		.cog3 {
+			transform: translate(0,-400px);
+			-ms-transform: translate(0,-400px);
+			-webkit-transform: translate(0,-400px);
+		}
+		.lefthand {
+			transform: rotate(-30deg);
+			-ms-transform: rotate(-30deg);
+			-webkit-transform: rotate(-30deg);
+		}
+		.righthand {
+			transform: rotate(30deg);
+			-ms-transform: rotate(30deg);
+			-webkit-transform: rotate(30deg);
+		}
+		.shield {
+			filter: invert(10%);
+			-webkit-filter: invert(10%);
+			-ms-filter: invert(10%);
+		}
 	}
 }
 
@@ -351,11 +389,13 @@ img {
 	.content-sidebar {
 		-webkit-transform: translate3d(80%,0,0);
 		transform: translate3d(80%,0,0);
+		-moz-transform: translate3d(80%,0,0);
 	}
 	.header-aside,
 	.content-aside {
 		-webkit-transform: translate3d(-80%,0,0);
 		transform: translate3d(-80%,0,0);
+		-moz-transform: translate3d(-80%,0,0);
 	}
 	.panel-heading {
 		padding: 4px;
@@ -370,10 +410,12 @@ img {
 	.content-sidebar {
 		-webkit-transform: translate3d(40%,0,0);
 		transform: translate3d(40%,0,0);
+		-moz-transform: translate3d(40%,0,0);
 	}
 	.header-aside,
 	.content-aside {
 		-webkit-transform: translate3d(-40%,0,0);
 		transform: translate3d(-40%,0,0);
+		-moz-transform: translate3d(-40%,0,0);
 	}
 }
