@@ -6068,13 +6068,13 @@ img {
   .sidebar {
     width: 80%;
   }
-  .header-sidebar,
+  .header-sidebar.affix,
   .content-sidebar {
     -webkit-transform: translate3d(80%, 0, 0);
     transform: translate3d(80%, 0, 0);
     -moz-transform: translate3d(80%, 0, 0);
   }
-  .header-aside,
+  .header-aside.affix,
   .content-aside {
     -webkit-transform: translate3d(-80%, 0, 0);
     transform: translate3d(-80%, 0, 0);
@@ -6089,13 +6089,13 @@ img {
   .sidebar {
     width: 40%;
   }
-  .header-sidebar,
+  .header-sidebar.affix,
   .content-sidebar {
     -webkit-transform: translate3d(40%, 0, 0);
     transform: translate3d(40%, 0, 0);
     -moz-transform: translate3d(40%, 0, 0);
   }
-  .header-aside,
+  .header-aside.affix,
   .content-aside {
     -webkit-transform: translate3d(-40%, 0, 0);
     transform: translate3d(-40%, 0, 0);
